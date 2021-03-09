@@ -1,0 +1,11 @@
+Code Review
+
+Phase1
+-rename class 1
+-rename calculeaza and use lowerCamelCase
+-rename t,s,perioada 
+-rename rezult
+-rename valoare
+
+
+-remove the hard-coded values aka "magic nb"

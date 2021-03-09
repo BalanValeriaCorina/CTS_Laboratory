@@ -11,3 +11,12 @@ Phase1
 -remove the hard-coded values aka "magic nb"
 
 -add validations for input values
+
+
+
+Phase 2-KISS and Single Responsability
+-simplify the expressions
+-a function should do only one thing
+
+
+

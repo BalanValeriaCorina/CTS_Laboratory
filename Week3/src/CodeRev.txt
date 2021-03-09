@@ -9,3 +9,5 @@ Phase1
 
 
 -remove the hard-coded values aka "magic nb"
+
+-add validations for input values

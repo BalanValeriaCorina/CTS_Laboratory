@@ -2,18 +2,23 @@ package ro.ase.csie.g1094.refactor.phase3;
 
 import ro.ase.csie.cts.g1094.refactor.exceptions.InvalidAgeException;
 import ro.ase.csie.cts.g1094.refactor.exceptions.InvalidPriceException;
+import ro.ase.csie.g1094.refactor.phase3.services.MarketingEasterStrategy;
 import ro.ase.csie.g1094.refactor.phase3.services.MarketingServiceInterface;
+import ro.ase.csie.g1094.refactor.phase3.services.ValidatorServiceInterface;
 
 public class Product {
 	
 	MarketingServiceInterface mkService=null;
+	ValidatorServiceInterface validator=null;
 	
-	public Product(MarketingServiceInterface mkService) {
+	
+	public Product(MarketingServiceInterface mkService, ValidatorServiceInterface validator) {
 		if(mkService==null)
 		{
 			throw new NullPointerException();
 		}
 		this.mkService=mkService;
+		this.validator=validator;
 	}
 	
 	private static float getDiscountValue(float price, float discount) {
@@ -39,6 +44,10 @@ public class Product {
 	public float computePriceWithDiscount(ProductType productType, float price, int accountAge) 
 			throws InvalidPriceException, InvalidAgeException
 	  {
+		validator.validatePrice(price);
+		validator.validateAge(accountAge);
+		
+		
 		if(price <= 0) {
 			throw new InvalidPriceException();
 		}
@@ -47,14 +56,7 @@ public class Product {
 		}
 		
 		
-		public setMarketingService(MarketingServiceInterface mkService)
-		{
-			if(mkService==null)
-			{
-				throw new NullPointerException();
-			}
-			this.mkService=mkService;
-		}
+		
 		
 	    float fidelityDiscount = 
 	    		(productType == ProductType.NEW) ? 0 : mkService.getFidelityDiscount(accountAge);
@@ -63,4 +65,18 @@ public class Product {
     	    
 	    return finalPrice;
 	  }
+	
+	public void setMarketingService(MarketingServiceInterface mkService)
+	{
+		if(mkService==null)
+		{
+			throw new NullPointerException();
+		}
+		this.mkService=mkService;
+	}
+
+//	public void setMarketingService(MarketingEasterStrategy marketingEasterStrategy) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 }

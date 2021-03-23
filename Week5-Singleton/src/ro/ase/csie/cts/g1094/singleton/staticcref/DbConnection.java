@@ -1,11 +1,11 @@
-package ro.ase.csie.cts.g1094.singleton;
+package ro.ase.csie.cts.g1094.singleton.staticcref;
 
 public class DbConnection {
 
 	String connString;
 	String schema;
 	
-	private static DbConnection connection=null;
+	private final static DbConnection connection=new DbConnection();
 	
 	private DbConnection() {
 		System.out.println("loading config");

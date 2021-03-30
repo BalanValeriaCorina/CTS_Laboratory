@@ -18,6 +18,7 @@ public class TestBuilder {
 		SuperHero superman=new SuperHero.SuperHeroBuilder("Superman",100).addSuperPower("fly").build();
 		//superman.superPower="fly";
 		
-		SuperHero joker=new SuperHero.SuperHeroBuilder("Joke", 200).isVillain().addLeftWeapon(new Pistol()).build();
+		SuperHero joke=new SuperHero.SuperHeroBuilder("Joke", 200).isVillain().addLeftWeapon(new Pistol()).build();
+	
 	}
 }

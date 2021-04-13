@@ -2,8 +2,8 @@ package ro.ase.csie.cts.g1094.dp.adapter;
 
 public abstract class ACMESuperhero {
 
-	String name;
-	int lifePoints;
+	public String name;
+	public int lifePoints;
 	
 	public ACMESuperhero(String name, int lifePoints) {
 		super();

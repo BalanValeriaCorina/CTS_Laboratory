@@ -8,7 +8,7 @@ public class TestFlyweight {
 		ScreenData coordTree=new ScreenData(100,10,0,"Green");
 		ScreenData coordTree2=new ScreenData(100,10,0,"Green");
 		
-		ModelflyweightActions soldier=Model3DFactory.getModel(ModelTypes.SOLDIER);
+		//ModelflyweightActions soldier=Model3DFactory.getModel(ModelTypes.SOLDIER);
 		
 		
 	}
